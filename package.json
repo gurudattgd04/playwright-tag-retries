@@ -1,0 +1,32 @@
+{
+  "name": "playwright-tag-retries",
+  "version": "1.0.0",
+  "description": "Playwright plugin: retry only tests with certain tags (e.g. @flaky, @retry)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "example:serve": "serve examples/sample-app/public -p 3123",
+    "example:test": "playwright test -c examples/playwright.config.ts",
+    "example:test:ui": "playwright test -c examples/playwright.config.ts --ui"
+  },
+  "keywords": [
+    "playwright",
+    "playwright-test",
+    "retry",
+    "tags",
+    "flaky",
+    "grep"
+  ],
+  "peerDependencies": {
+    "@playwright/test": ">=1.42.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^20.0.0",
+    "serve": "^14.0.0",
+    "typescript": "^5.0.0"
+  }
+}

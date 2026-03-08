@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample App — playwright-tag-retries demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { color: #0ea5e9; }
+    .counter { font-size: 1.5rem; margin: 1rem 0; }
+    button { padding: 0.5rem 1rem; cursor: pointer; margin-right: 0.5rem; }
+    nav a { margin-right: 1rem; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 0.25rem 0; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <main>
+    <h1>Sample App</h1>
+    <p>Use this app to run the example Playwright tests with tag-based retries.</p>
+    <div class="counter">
+      Count: <span id="count">0</span>
+      <button id="increment">+1</button>
+    </div>
+    <section>
+      <h2>Items</h2>
+      <ul id="items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    const countEl = document.getElementById('count');
+    const btn = document.getElementById('increment');
+    let count = 0;
+    btn.addEventListener('click', () => { count++; countEl.textContent = count; });
+  </script>
+</body>
+</html>
