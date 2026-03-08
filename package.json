@@ -4,7 +4,17 @@
   "description": "Playwright plugin: retry only tests with certain tags (e.g. @flaky, @retry)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "LICENSE"],
+  "author": "Gurudatt SA <gurudatt.sa26@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gurudattgd04/playwright-tag-retries.git"
+  },
+  "homepage": "https://github.com/gurudattgd04/playwright-tag-retries#readme",
+  "bugs": {
+    "url": "https://github.com/gurudattgd04/playwright-tag-retries/issues"
+  },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
