@@ -8,6 +8,9 @@ import { tagRetryProjects } from '../dist';
  * - All other tests run with 0 retries (project: default).
  */
 export default defineConfig({
+  use: {
+    baseURL: 'http://localhost:3123'
+  }
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
