@@ -22,7 +22,7 @@ jobs:
           run: npx playwright install --with-deps
 
         - name: Run Tests
-          run: npx playwright test -config=examples/playwright.config.ts --shard=${{ matrix.shard }} --reporter=blob
+          run: npx playwright test --config=examples/playwright.config.ts --shard=${{ matrix.shard }} --reporter=blob
         
 
          
