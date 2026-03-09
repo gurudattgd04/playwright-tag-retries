@@ -1,0 +1,31 @@
+name: run-playwright-example-tests
+
+on: [push, pull_request]
+
+jobs:
+  testApp:
+      runs-on: ubuntu-latest
+      strategy:
+        fail-fast: false
+        matrix:
+          shard: [1/3, 2/3, 3/3]
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+            node-version: 20
+
+        - name: Install Dependencies
+          run: npm ci
+
+        - name: Start app
+          run: npm run example:serve &
+
+        - name: App Health Check
+          run: npx wait-on http://localhost:3000 --timeout 60000
+
+        - name: Run Tests
+          run: npx playwright test --shared=${ {matrix.shard} } --reporter=blob
+        
+
+         
