@@ -19,14 +19,14 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
-    ...tagRetryProjects({
-      tags: ['@flaky', '@retry'],
-      retries: 2,
-      retryProjectName: 'tagged-retry',
-      defaultProjectName: 'default',
-      use: { ...devices['Desktop Chrome'] },
-    }),
-  ],
+  ...tagRetryProjects({
+    tags: ['@flaky', '@retry'],
+    retries: 2,
+    retryProjectName: 'tagged-retry',
+    defaultProjectName: 'default',
+    use: { ...devices['Desktop Chrome'], baseURL: 'http://localhost:3123' },
+  }),
+ ],
   webServer: {
     command: 'npx serve sample-app/public -p 3123',
     url: 'http://localhost:3123',
