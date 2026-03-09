@@ -21,12 +21,6 @@ jobs:
         - name: Install Playwright browsers
           run: npx playwright install --with-deps
 
-        - name: Start app
-          run: npm run example:serve &
-
-        - name: App Health Check
-          run: npx wait-on http://localhost:3123 --timeout 60000
-
         - name: Run Tests
           run: npx playwright test --shard=${{ matrix.shard }} --reporter=blob
         
