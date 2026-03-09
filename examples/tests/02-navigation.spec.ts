@@ -11,8 +11,8 @@ test.describe('Navigation', () => {
     await expect(page.locator('h1')).toHaveText('Sample App');
   });
 
-  test('About page has correct title', { tag: '@flaky1' }, async ({ page }) => {
+  test('About page has correct title', { tag: '@flaky' }, async ({ page }) => {
     await page.goto('/about.html');
-    await expect(page.locator('h1')).toHaveText('About1');
+    await expect(page.locator('h1')).toHaveText('About');
   });
 });
